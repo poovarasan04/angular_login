@@ -1,0 +1,27 @@
+.main-container{
+    background-color: #f1f2f6;
+}
+.main-container-sub{
+    background-color: #ffffff;
+}
+.active-component{
+    border-left: 5px solid #fba601;
+}
+.image-container{
+    position: relative;
+}
+.image-container-sub{
+    position: absolute;
+    height: 90vh;
+    top:-50px;
+}
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+
+  }
+  
+  @media (max-width: 576px) {
+  
+  }
+  

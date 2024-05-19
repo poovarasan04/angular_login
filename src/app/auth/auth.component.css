@@ -1,0 +1,15 @@
+.primary{
+    background-color: #f0783b;
+    color: #fff;
+    
+}
+.text-color-primary{
+    color: #f0783b;
+}
+.error-text{
+    font-size: small;
+    color: rgb(211, 60, 60);
+}
+mat-form-field{
+    width: 100%;
+}

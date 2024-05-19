@@ -1,0 +1,63 @@
+<div class="w-100 d-flex justify-content-center align-items-center h-100" *ngIf="formType=='login'">
+    <div class="container w-75 p-2">
+        <h2 class="fw-bolder">Welcome!</h2>
+        <p class="text-secondary">Log in with your data that you entered during your registration</p>
+        <form [formGroup]="userform">
+            <mat-form-field class="form-floating mb-1" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" aria-label="email" autocomplete="off" name="email">
+                <mat-icon matPrefix class="text-secondary me-2">person</mat-icon>
+                <mat-error *ngIf="userform.get('email')?.hasError('required')">Email is required</mat-error>
+                <mat-error *ngIf="userform.get('email')?.hasError('email')">Invalid Email</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" aria-label="password" autocomplete="off"
+                    name="password" (keypress.enter)="login()">
+                <mat-icon class="text-secondary me-2" matPrefix>lock</mat-icon>
+                <mat-error *ngIf="userform.get('password')?.hasError('required')">Password is
+                    required</mat-error>
+                <mat-error *ngIf="userform.get('password')?.hasError('minlength')">Invalid Password</mat-error>
+            </mat-form-field>
+            <a class="d-block text-start mb-3 text-color-primary text-decoration-none fs-6">Forgot your password?</a>
+            <button type="submit" class="btn w-100 primary" (click)="login()" [disabled]="userform.invalid">Log
+                in</button>
+        </form>
+    </div>
+</div>
+
+<div class="w-100 d-flex justify-content-center align-items-center h-100" *ngIf="formType=='register'">
+    <div class="container w-75 p-2">
+        <h2 class="fw-bolder">Welcome!</h2>
+        <p class="text-secondary">Register with your details</p>
+        <form class="" [formGroup]="signUpForm">
+            <mat-form-field class="form-floating mb-1" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" aria-label="email" autocomplete="off" name="email">
+                <mat-icon matPrefix class="text-secondary me-2">person</mat-icon>
+                <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">Email is required</mat-error>
+                <mat-error *ngIf="signUpForm.get('email')?.hasError('email')">Invalid Email</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" aria-label="password" autocomplete="off"
+                    name="password" (keypress.enter)="login()">
+                    <mat-icon matPrefix class="text-secondary me-2">lock</mat-icon>
+                <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">Password is
+                    required</mat-error>
+                <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength')">Invalid Password</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" formControlName="confirmPassword" autocomplete="off"
+                    name="confirmPassword">
+                    <mat-icon matPrefix class="text-secondary me-2">lock</mat-icon>
+                    <mat-error *ngIf="signUpForm.get('confirmPassword')?.hasError('required')">Password is
+                        required</mat-error>
+                    <mat-error *ngIf="signUpForm.errors?.['mismatch']">Passwords do not match</mat-error>
+            </mat-form-field>
+            <button type="submit" class="btn w-100 primary" (click)="signUp()" [disabled]="signUpForm.invalid">Sign
+                Up</button>
+        </form>
+    </div>
+</div>
