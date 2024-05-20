@@ -1,5 +1,5 @@
 <div class="w-100 d-flex justify-content-center align-items-center h-100" *ngIf="formType=='login'">
-    <div class="container w-75 p-2">
+    <div class="container w-75 p-2 mb-md-0 mb-5">
         <h2 class="fw-bolder">Welcome!</h2>
         <p class="text-secondary">Log in with your data that you entered during your registration</p>
         <form [formGroup]="userform">
@@ -27,7 +27,7 @@
 </div>
 
 <div class="w-100 d-flex justify-content-center align-items-center h-100" *ngIf="formType=='register'">
-    <div class="container w-75 p-2">
+    <div class="container w-75 p-2 mb-md-0 mb-5">
         <h2 class="fw-bolder">Welcome!</h2>
         <p class="text-secondary">Register with your details</p>
         <form class="" [formGroup]="signUpForm">

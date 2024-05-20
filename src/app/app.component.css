@@ -21,7 +21,22 @@
 
   }
   
-  @media (max-width: 576px) {
-  
+  @media (max-width: 600px) {
+  .main-container{
+    height: 100% !important;
+    overflow: auto;
   }
+  .active-component{
+    border-left: none;
+    border-bottom: 5px solid #fba601;
+  }
+  .tab-container{
+    margin-top: 150px;
+    height: fit-content !important;
+  }
+  .tab-container-sub{
+    width: 90% !important;
+  }
+  }
+  
   

@@ -1,35 +1,37 @@
 <div class="container-fluid vh-100 w-100 d-flex justify-content-center align-items-center main-container">
-  <div class="container container-center h-75 main-container-sub p-0 g-0 rounded-4" >
-    <div class="row g-0 p-0 h-100">
-      <div class="d-flex flex-column rounded-4 col-2 align-items-center justify-content-evenly h-100">
-        <div class="row">
-          <div class="col-12">
-            <img src="assets/images/image3.png" alt="company logo">
+  <div class="card main-container-sub p-0 m-md-5 m-1 pt-md-0 pt-2 g-0 rounded-4 w-100 h-75 d-flex " id="myelemont">
+    <div class="card-body p-0 m-0">
+    <div class="row g-0 p-0 h-100 pe-md-0">
+      <div class="container-fluid p-md-0 p-2 tab-container d-flex flex-md-column flex-row col-12 col-md-2 align-items-md-center align-items-end justify-content-evenly h-100 order-md-1 order-2">
+        <div class="row d-none d-md-flex">
+          <div class="col-12 text-center p-2">
+            <img src="assets/images/image3.png" alt="company logo" class="img-fluid">
           </div>
         </div>
-        <button class="row w-100 h-25 d-flex align-items-center btn btn-link text-decoration-none"
-           [ngClass]="is_form_type=='login'?'active-component text-dark':'text-secondary'"  (click)="switchForm('login')">
+        <button class="row w-100 h-25 d-flex align-items-center btn btn-link text-decoration-none" id="tab1"
+          [ngClass]="is_form_type=='login'?'active-component text-dark':'text-secondary'" (click)="switchForm('login')">
           <div class="col-12 d-flex justify-content-center flex-column gap-1 align-items-center">
             <img src="assets/images/checked.png" alt="" srcset="" height="50" width="50">
             <p class="fw-bolder">Log in</p>
           </div>
         </button>
-        <button class="row w-100 h-25 d-flex align-items-center btn btn-link text-decoration-none"
-        [ngClass]="is_form_type=='register'?'active-component text-dark ':'text-secondary'" (click)="switchForm('register')">
+        <button class="row w-100 h-25 d-flex align-items-center btn btn-link text-decoration-none" id="tab2"
+          [ngClass]="is_form_type=='register'?'active-component text-dark ':'text-secondary'" (click)="switchForm('register')">
           <div class="col-12 d-flex justify-content-center flex-column gap-1 align-items-center">
             <img src="assets/images/round.png" alt="" srcset="" height="50" width="50">
             <p class="fw-bolder">Sign Up</p>
           </div>
         </button>
       </div>
-      <div class="d-flex col-5 h-100 image-container">
+      <div class="d-md-flex col-md-5 col-12 image-container order-md-1 order-1 p-md-0 pe-5 d-none">
         <img src="assets/images/image2.jpg" class="img-fluid image-container-sub rounded-3" alt="Sample image">
       </div>
-      <div class="col-5 justify-content-center align-items-center">
+      <div class="col-12 col-md-5 d-flex justify-content-center align-items-center order-md-2 order-3 mt-md-0 mt-5">
         <router-outlet>
           <app-auth [formType]="is_form_type"></app-auth>
         </router-outlet>
       </div>
+    </div>
     </div>
   </div>
 </div>
